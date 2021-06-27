@@ -1,0 +1,80 @@
+{
+    "settings": {
+        "stable": {
+            "settings": {
+                "bda-gs-1": true,
+                "bda-gs-2": false,
+                "bda-gs-3": false,
+                "bda-gs-4": false,
+                "bda-gs-5": true,
+                "bda-gs-6": false,
+                "bda-gs-7": false,
+                "bda-gs-8": false,
+                "bda-es-0": true,
+                "bda-es-1": true,
+                "bda-es-2": true,
+                "bda-es-4": false,
+                "bda-es-6": true,
+                "bda-es-7": true,
+                "bda-gs-b": false,
+                "bda-es-8": true,
+                "bda-dc-0": true,
+                "bda-css-0": false,
+                "bda-css-1": false,
+                "bda-es-9": true,
+                "fork-dm-1": false,
+                "fork-ps-1": true,
+                "fork-ps-2": true,
+                "fork-ps-3": true,
+                "fork-ps-4": true,
+                "fork-ps-5": true,
+                "fork-ps-6": true,
+                "fork-ps-7": false,
+                "fork-es-2": false,
+                "fork-es-3": true,
+                "fork-wp-1": false,
+                "fork-wp-2": false,
+                "fork-beta": true,
+                "lightcord-1": false,
+                "lightcord-2": true,
+                "lightcord-presence-1": false,
+                "lightcord-3": false,
+                "lightcord-4": false,
+                "lightcord-5": true,
+                "lightcord-6": true,
+                "lightcord-7": false,
+                "lightcord-8": false,
+                "lightcord-9": false,
+                "lightcord-10": false,
+                "no_window_bound": false
+            },
+            "rpc": {
+                "name": "Lightcord",
+                "application_id": "711416957718757418",
+                "state": "Lightcord Client",
+                "details": "Browsing Discord",
+                "timestamps.start": 1616580804717,
+                "assets.small": null,
+                "assets.large": "712323821037682791"
+            },
+            "PluginCertifierHashes": "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",
+            "plugins": {
+                "ZeresPluginLibrary": true
+            },
+            "themes": {
+                "Dark Discord": false,
+                "Glasscord Example Theme": true,
+                "ClearVision": false,
+                "Frosted Glass": false,
+                "Translucence": false,
+                "mari": false,
+                "mariii-1": false,
+                "mariii-2": false,
+                "mariii": false
+            }
+        },
+        "canary": {},
+        "ptb": {}
+    },
+    "version": "0.3.5"
+}

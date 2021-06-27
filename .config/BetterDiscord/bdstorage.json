@@ -1,0 +1,62 @@
+{
+    "settings": {
+        "stable": {
+            "settings": {
+                "bda-gs-1": true,
+                "bda-gs-2": false,
+                "bda-gs-3": false,
+                "bda-gs-4": false,
+                "bda-gs-5": true,
+                "bda-gs-6": false,
+                "bda-gs-7": false,
+                "bda-gs-8": false,
+                "bda-es-0": true,
+                "bda-es-1": true,
+                "bda-es-2": true,
+                "bda-es-4": false,
+                "bda-es-6": true,
+                "bda-es-7": true,
+                "bda-gs-b": false,
+                "bda-es-8": true,
+                "bda-dc-0": true,
+                "bda-css-0": false,
+                "bda-css-1": false,
+                "bda-es-9": true,
+                "fork-dm-1": false,
+                "fork-ps-1": true,
+                "fork-ps-2": true,
+                "fork-ps-3": true,
+                "fork-ps-4": true,
+                "fork-ps-5": true,
+                "fork-es-2": false,
+                "fork-es-3": true,
+                "fork-wp-1": false,
+                "fork-wp-2": false,
+                "fork-beta": true,
+                "reactDevTools": false,
+                "transparency": false
+            },
+            "plugins": {
+                "HideDisabledEmojis": false
+            },
+            "themes": {
+                "Frosted Glass": false,
+                "ClearVision": false,
+                "Translucence": false,
+                "marii": false,
+                "new": false,
+                "new2": false,
+                "mari": false,
+                "mariii": false,
+                "mariii-1": true,
+                "mariii-2": false
+            }
+        },
+        "canary": {},
+        "ptb": {}
+    },
+    "version": "0.3.5",
+    "emoteCacheDays": 7,
+    "emoteCacheDate": "2021-03-19T16:07:38.857Z",
+    "bdfavemotes": "eyJPa2V5IjoiaHR0cHM6Ly9jZG4uZnJhbmtlcmZhY2V6LmNvbS9lbW90aWNvbi8yNzUwNTQvMSJ9"
+}
