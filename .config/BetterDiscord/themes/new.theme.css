@@ -1,0 +1,52 @@
+/**
+ * @name new
+ * @author Gibbu#1211
+ * @version 2.0.0
+ * @description Display your picture of choice with adjustable blur and brightness. Dark theme is required
+ * @invite ZHthyCw
+ * @donate https://paypal.me/IanRGibson
+ * @authorId 174868361040232448
+ * @source https://github.com/Gibbu/BetterDiscord-Themes/tree/master/FrostedGlass
+ * @website https://gibbu.me
+*/
+
+@import url('https://discordstyles.github.io/FrostedGlass/base.css');
+@import url('https://discord-custom-covers.github.io/usrbg/snippets/userPopouts.css');
+@import url('https://discord-custom-covers.github.io/usrbg/snippets/modals.css');
+@import url('https://monstrousdev.github.io/themes/addons/user-tags.css');
+@import url('https://gibbu.github.io/BetterDiscord-Themes/addons/windows-titlebar.css');
+@import url('https://gibbu.github.io/BetterDiscord-Themes/AdjustableServerWidth/base.css');
+
+:root {
+  --background-image: url('https://i.imgur.com/TR0UuiJ.jpg');
+  --background-image-blur: 5px;
+  --background-image-size: cover;
+  --background-image-position: center center;
+  --popout-modal-image: var(--background-image);
+  --popout-modal-blur: 5px;
+  --popout-modal-size: cover;
+  --popout-modal-position: center center;
+  --home-button-image: url('https://i.imgur.com/PNBa8QW.jpg');
+  --home-button-size: cover;
+  --home-button-position: center center;
+  --serverlist-brightness: 0.8;
+  --left-brightness: 0.68;
+  --middle-brightness: 0.46;
+  --right-brightness: 0.58;
+  --popout-modal-brightness: 0.24;
+  --gradient-primary: 103,58,183;
+  --gradient-secondary: 63,81,181;
+  --scrollbar-colour: rgba(255,255,255,0.05);
+  --link-colour: #00b0f4;
+  --gradient-direction: 320deg;
+  --tint-colour: 255,51,159;
+  --tint-brightness: 0;
+  --font: Whitney;
+  --window-padding: 5px;
+  --window-roundness: 10px;
+  --show-gift-gif-buttons: block;
+  --update-notice-1: none;
+  --server-icon-size: 45px;
+  --server-icon-spacing: 8px;
+  --server-container-padding: 8px;
+}

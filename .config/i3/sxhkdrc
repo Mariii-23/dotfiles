@@ -1,0 +1,259 @@
+
+super + Return
+       alacritty 
+
+super + shift + Return
+       terminator
+
+super + p
+       lightcord & disown ; \
+       i3-msg workspace number 9
+
+       # if [ ! -e /tmp/.discord ];then \
+       #     sleep 5 ; \
+       #     touch /tmp/.discord ; \
+       #     online ; \
+       # fi
+
+super + i
+      firefox
+        #$BROWSER
+
+super + shift + i
+        "$BROWSER" $(xclip -sel c -o)
+
+super + d
+        dmenu_run
+
+super + o
+        pgrep spotify || spotify & disown; \
+        i3-msg workspace number 9
+        #alacritty --class 'floating-term' -e bash -c "spt"
+
+super  + m
+       i3-msg workspace number 8; \
+       firefox -new-window https://www.youtube.com/
+
+super + {n,u,shift + u}
+      {pavucontrol,emacsclient -c,intellij-idea-ultimate-edition}
+      
+# Wallpaper
+# bindsym XF86Favorites  exec --no-startup-id  bash ~/dotfiles/scripts/wallpaper.sh
+# bindsym Ctrl+XF86Favorites  exec --no-startup-id  bash ~/dotfiles/scripts/wallpaper.sh 1
+# bindsym $mod+XF86Favorites exec --no-startup-id  bash ~/dotfiles/scripts/wallpaper.sh 0
+
+XF86Favorites
+    bash ~/dotfiles/scripts/wallpaper.sh
+
+control + XF86Favorites
+        bash ~/dotfiles/scripts/wallpaper.sh 1
+
+super + XF86Favorites
+      bash ~/dotfiles/scripts/wallpaper.sh 0
+
+# 
+# super + u
+#         slack & disown ; i3-msg workspace number 8
+
+# super + shift + w
+#         wallpaper
+
+# super + alt + w
+#         wallpaper prompt
+
+# super + shift + p
+#         if pgrep Discord ; then \
+#            if [ -e /tmp/.dnd ]; then \
+#                online ; \
+#                rm /tmp/.dnd ; \
+#            else \
+#                dunstctl close-all ; \
+#                busy ; \
+#                touch /tmp/.dnd ; \
+#            fi ; \
+#         fi
+
+# super + d
+#         dmenu_script.sh
+
+# super + s
+#     ssh_menu
+
+# super + c
+#         rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n '{result}' | xclip '
+
+# super + shift + f
+#         alacritty --class 'floating-term' -e bash -c "source /home/pasok/dotfiles/configs/zsh/functions.zsh ; f launcher "
+          
+
+control + @Print
+        # Copia pra clipboard
+       scrot -f /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+
+shift + @Print
+    scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f ; mv $f /tmp/ && sxiv -b -g $wx$h -p /tmp/$f && rm /tmp/$f'
+
+#scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+
+# shift + XF86Eject
+#         sleep 1 ; \
+#         scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+
+super + @Print
+      flameshot gui -p ~/screenshot
+
+@Print
+      scrot -sf ~/screenshot/%Y-%m-%d-%T-screenshot.png -e 'xclip -selection c -t image/png < $f'
+
+super + shift + @Print
+      simplescreenrecorder
+
+# XF86Eject
+#        sleep 1 ; \
+#        scrot -f /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+
+# super + @Print
+#     scrot -sf -e 'mv $f /tmp/ && sxiv -b -g $wx$h -p /tmp/$f && rm /tmp/$f'
+
+
+# control + alt + l
+#     blur-lock
+
+# control + alt + s
+#         systemctl suspend
+
+# control + alt + p
+#         poweroff
+
+# control + shift + r
+#         cd ~/Downloads && ls -t | head -n 1 | xargs -0 xdg-open
+
+# super + alt + v
+#         vim-anywhere
+
+# F2
+#    monitor dual
+
+# F3
+#    rotate_monitor.sh
+
+# super + alt + p
+#     lights prompt
+
+
+################################### MEDIA KEYS #################################
+
+###### BRIGHTNESS ######################
+
+XF86MonBrightness{Up,Down}
+        brightnessctl set 5000{+,-}
+
+######### MEDIA ###########
+
+XF86Audio{Raise,Lower}Volume
+        pactl set-sink-mute @DEFAULT_SINK@ false; \
+        pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+
+XF86AudioMute
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioMicMute
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+F5
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+XF86Audio{Play,Stop}
+        playerctl {play-pause,stop}
+
+super + XF86Audio{Mute,RaiseVolume,LowerVolume}
+      playerctl {play-pause, next,previous}
+
+# control + alt + {space,Left,Right}
+#         playerctl {play-pause,previous,next}
+
+XF86Audio{Prev,Next}
+        playerctl {previous, next}
+
+
+######################################## WM KEYBINDS ##########################################
+
+######### MISC ###########
+
+super + shift + q
+        i3-msg kill
+
+super + q
+        kill -9 $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
+
+
+super + shift + r
+        i3-msg restart ; killall sxhkd && sxhkd & disown
+
+super + shift + e
+        i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+
+
+####### MOVE FOCUS #######
+
+super + {1-9,0}
+        i3-msg workspace {1-9,10}
+
+alt + Tab
+        i3-msg workspace {back_and_forth}
+
+super + {h,j,k,l,space}
+        i3-msg focus {left,down,up,right,mode_toggle}
+
+##### MOVE CONTAINER #####
+
+super + shift + {1-9,0}
+        i3-msg move container to workspace {1-9,10}
+
+super + shift + {h,j,k,l}
+        i3-msg move {left,down,up,right}
+
+control + super + {h,j,k,l}
+        i3-msg move workspace to output {left,down,up,right}
+
+#### RESIZE CONTAINER ####
+
+super + alt + {h,j,k,l}
+       i3-msg resize {shrink width,grow height,shrink height,grow width} 10 px or 10 ppt
+
+######### LAYOUT #########
+
+# super + shift + space{_,x}
+#         i3-msg floating toggle ; {_,sticky toggle}
+
+super + shift +  s
+        if [ ! $(i3-msg "scratchpad show" 1>/dev/null ) ];then
+           i3-msg "move scratchpad"
+        fi
+
+super + {c,v}
+      i3-msg split {h,v}
+
+super + f
+      i3-msg fullscreen toggle
+
+super + {s,w,e}
+      i3-msg layout {stacking,tabbed,toggle split}
+
+super + shift + space
+      i3-msg floating toggle resize set 55 ppt 70 ppt
+
+super + space
+      focus mode_toggle
+
+super + a
+      focus parent
+
+# super + v
+#         i3-msg split toggle
+
+# super + f
+#         i3-msg fullscreen toggle
+
+# super + e
+#         i3-msg layout tabbed

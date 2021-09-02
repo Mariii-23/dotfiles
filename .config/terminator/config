@@ -1,0 +1,69 @@
+[global_config]
+  hide_from_taskbar = True
+  title_transmit_bg_color = "#212121"
+  title_receive_bg_color = "#1793d1"
+  title_inactive_bg_color = "#323232"
+  title_use_system_font = False
+  title_font = Hack 10
+[keybindings]
+  switch_to_tab_1 = <Primary>1
+  switch_to_tab_2 = <Primary>2
+  switch_to_tab_3 = <Primary>3
+  switch_to_tab_4 = <Primary>4
+  switch_to_tab_5 = <Primary>5
+  switch_to_tab_6 = <Primary>6
+  switch_to_tab_7 = <Primary>7
+  switch_to_tab_8 = <Primary>8
+  switch_to_tab_9 = <Primary>9
+  switch_to_tab_10 = <Primary>0
+[profiles]
+  [[default]]
+    background_darkness = 0.7
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Anonymous Pro Minus Bold 12
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_background = False
+    scrollback_lines = 5000
+    palette = "#31373a:#cc0000:#4e9a06:#d64937:#1793d1:#10ea8a:#06989a:#d2d2d2:#555753:#ef2929:#8ae234:#1793d1:#1793d1:#ad7fa8:#34e2e2:#ffffff"
+    use_system_font = False
+    copy_on_selection = True
+  [[dracula]]
+    background_color = "#1e1f29"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_blink = False
+    cursor_shape = ibeam
+    cursor_color = "#bbbbbb"
+    font = Hack 10
+    foreground_color = "#f8f8f2"
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#000000:#ff5555:#50fa7b:#f1fa8c:#bd93f9:#ff79c6:#8be9fd:#bbbbbb:#555555:#ff5555:#50fa7b:#f1fa8c:#bd93f9:#ff79c6:#8be9fd:#ffffff"
+    login_shell = True
+    use_system_font = False
+    copy_on_selection = True
+  [[ninja]]
+    background_darkness = 0.82
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Anonymous Pro Minus Bold 12
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_background = False
+    scrollback_lines = 5000
+    palette = "#31373a:#cc0000:#4e9a06:#d64937:#1793d1:#10ea8a:#06989a:#d2d2d2:#555753:#ef2929:#8ae234:#1793d1:#1793d1:#ad7fa8:#34e2e2:#ffffff"
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]

@@ -1,0 +1,55 @@
+#+TITLE: Install
+
+* Install
++ networkmanager && network-manager-applet
+  - start/enable NetworkManager.service
+  - torn on nm-applet
+  - wpa_supplicant dhcpcd dialog networkmanager network-manager-applet
++ [[https://github.com/dandavison/delta][git]]
++ i3-gaps
++ bswpm
++ zsh
++ alacratty
++ tmux
++ [[https://wiki.archlinux.org/index.php/PulseAudio_(Portugu%C3%AAs)#Instala%C3%A7%C3%A3o][PulseAudio]]
++ [[https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture][Alsa]]
+  - Activate things
++ [[https://wiki.archlinux.org/index.php/Polybar][polybar]]
++ [[https://wiki.archlinux.org/index.php/Bluetooth][bluez and bluez-utils]]
+  - Bluetooth
++ [[https://wiki.archlinux.org/index.php/Bluetooth][blueberry]]
+  - Bluetooth Viewer
++ [[https://wiki.archlinux.org/index.php/zathura][zathura]]
+  - Install dependencias.
+  - Document Viewer
++ Nvim && Vim
++ [[https://wiki.archlinux.org/index.php/ranger][Ranger]]
+  - File Manager
++ [[https://wiki.archlinux.org/index.php/Feh][Feh]]
+  - Image Viewer
++ [[https://wiki.archlinux.org/index.php/Mpv][Mpv]]
+  - Video Player
++ [[https://github.com/hlissner/doom-emacs][Doom emacs]]
++ [[https://wiki.archlinux.org/index.php/Flameshot][Flameshot]] && [[https://wiki.archlinux.org/index.php/Screen_capture][Scrot]]
++ [[https://wiki.archlinux.org/index.php/xrandr#Automatically_switch_configurations_with_autorandr][Xrandr]]
+  - HDMI Monitors
++ [[https://wiki.archlinux.org/index.php/Dunst][Dunst]]
+  - Notification Viewer
++ [[https://github.com/Raymo111/i3lock-color][i3lock-color]] && [[https://github.com/meskarune/i3lock-fancy][i3lockfancy]]
++ [[https://github.com/tryone144/picom/tree/feature/dual_kawase][picom-tryone-git]]
+
+* Other
++ [[https://www.tecmint.com/install-yay-aur-helper-in-arch-linux-and-manjaro/][yay]]
++ [[file:Spotify.md][Spotify]]
+
+* [[https://wiki.archlinux.org/index.php/fonts][Fonts]]
++ noto-fonts-emoji
++ noto-fonts
++ fonts-noto
++ ttf-font-awesome
++ ttf-font-awesome-4
++ nerd-fonts-hack
++ hack
+
+* number
+1,5,7,8,11,14,16-20,21,22,28,35-39,41-46,50,53,111,120,118,123,127,129,134,137
