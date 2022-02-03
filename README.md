@@ -1,7 +1,7 @@
 # DOTFILES
-![Photo1](/Screenshot/arch.png)
+![Photo1](/Screenshot/arch2.png)
 
-![Photo](/Screenshot/2020-11-24-11:38:15-screenshot.png)
+![Photo](/Screenshot/arch2-1.png)
 
 ## PACKAGES:
 
