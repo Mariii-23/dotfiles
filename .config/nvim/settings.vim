@@ -115,3 +115,17 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+
+" Function to change transparency
+let t:is_transparent = 1
+function! Toggle_transparent_background()
+  if t:is_transparent == 0
+    hi Normal guibg=#111111 ctermbg=black
+    let t:is_transparent = 1
+  else
+    hi Normal guibg=NONE ctermbg=NONE
+    let t:is_transparent = 0
+  endif
+endfunction
+nnoremap <C-t> :call Toggle_transparent_background()<CR>

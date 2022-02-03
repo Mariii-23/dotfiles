@@ -13,7 +13,10 @@ xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Tapping Enabled' 1
 
 sxhkd &>/dev/null & disown
 
-setxkbmap -option caps:swapescape
+
+#setxkbmap -option caps:swapescape
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape'
 
 exec i3
 # exec bswpm

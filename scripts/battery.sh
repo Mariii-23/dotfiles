@@ -29,13 +29,13 @@ while true; do
      [ $charging -eq 0 ]
   then
     play -q -v 0.50 "$alarm" &
-    mvp "$alarm" &
+    mpv "$alarm" &
     notify-send " Low battery: ${battery_level}% " " Plug into mains power " -t 8000 -i ~/dotfiles/Screenshot/empty-battery.png
   else if [ $battery_level -ge $full_level ] &&
           [ $charging != 0 ]
   then
       play -q -v 0.50 "$alarm" &
-      mvp "$alarm" &
+      mpv "$alarm" &
       notify-send " Full battery: ${battery_level}% " " Plug out mains power " -t 8000 -i ~/dotfiles/Screenshot/battery_full.png
   fi
   fi

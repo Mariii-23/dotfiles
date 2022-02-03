@@ -59,12 +59,35 @@ export -f commit}
 function gc() { git commit -m "$1";
 export -f gc
 }
+
+function gcp() { git commit -m "$1"; git push;
+export -f gcp
+}
+
+function ga() { git commit --amend -m "$1";
+export -f gcp
+}
+
+function gap() { git commit --amend -m "$1"; git push --force;
+export -f gcp
+}
+
 # git add + git commit + git push
 gup()
 {
   if [[ "$1" != "" ]]; then
     git add .
     git commit -m "$1"
+    git push
+  else
+    git status
+  fi
+}
+
+gap() {
+  if [[ "$1" != "" ]]; then
+    git add .
+    git commit --amend -m "$1"
     git push
   else
     git status
@@ -158,4 +181,47 @@ cd_() {
   else
     cd ..
   fi
+}
+
+my_ip () {
+    if [ -z "$1" ]
+    then
+        echo -n "Public ip: "
+        curl ifconfig.me
+    else
+        echo -n "Local ip: "
+        ip -o -4 addr list | grep -E "(w|eth|en)" | awk '{print $4}'
+    fi
+}
+
+last_n () {
+  if [[ "$1" != "" ]]; then
+    if [[ "$2" != "" ]]; then
+      # ls -t "$2" | head -n "$1" | tr '\n' ' '
+      exa -soldest "$2" | head -n "$1" | tr '\n' ' '
+    else
+      # ls -t . | head -n "$1" | tr '\n' ' '
+      exa -soldest | head -n "$1" | tr '\n' ' '
+    fi
+  else
+    echo "Insufficient arguments.\nlast_n Number Path_to_copy [Path_where_will_move]"
+  fi
+}
+
+mv_last () {
+  if [[ "$1" != "" && "$2" != ""  ]]; then
+    # last = $(last_n "$1" "$2")
+
+    if [[ "$3" != "" ]]; then
+      mv $(last_n "$1" "$2") "$3"
+    else
+      mv $(last_n "$1" "$2") .
+    fi
+  else
+    echo "Insufficient arguments.\nlast_n Number Path_to_copy [Path_where_will_move]"
+  fi
+}
+
+u() {
+  cd "$HOME/3_Ano_Uni/1sem/$1" || cd "$HOME/3_Ano_Uni/2sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
 }

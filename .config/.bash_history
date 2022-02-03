@@ -1,33 +1,3 @@
-cd bash/
-l
-tmux 
-yay caps2esc
-yay caps2esc
-pac libevdev
-pac noto-fonts-emoji
-pac noto-fonts
-pac fonst-noto
-yay fonts-noto
-pac ttf-font-awesome
-pac ttf-font-awesome-4
-yay ttf-font-awesome-4
-yay nerd-fonts-hack
-yay hack
-yay fonts
-v /etc/locale.gen 
-sudo v /etc/locale.gen 
-sudo nvim /etc/locale.gen 
-locale-gen 
-sudo locale-gen 
-tmux 
-locale -a
-pac locales
-reboot 
-pac flameshot
-mkdir Dowloads
-git clone https://github.com/Mariii-23/wallpaper.git
-git clone https://github.com/Mariii-23/screenshot.git
-flameshot 
 flameshot & disown 
 caps2esc 
 tmux
@@ -498,3 +468,33 @@ zsh
 :q
 killall tmux
 :
+l
+ls
+ls -t
+ls -t Projetos/
+:q
+cd try/
+ls -t
+ls -t .
+ls -t .
+ls -t .
+ls -t .
+up
+ls -t .
+ls -t . | head -n 2
+ls -t Downloads/
+bat .zsh_history 
+up
+last_n 2
+:q
+:q
+exit
+ls -t
+last_n 3 ~/Downloads/
+ls -t
+ls -t ../uni-projetos/
+up
+exit
+ls -t
+ls -tl 
+exit
