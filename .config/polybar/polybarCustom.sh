@@ -24,11 +24,13 @@ case "$1" in
     "battery")
         charging=$(acpi -b | grep -c "Charging")
         battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
-        echo $battery_level
+        # echo $battery_level
         if [[ $charging -eq 0 ]] ; then
-            echo "  $battery_level"
+            # echo "  $battery_level"
+            echo $battery_level
         else
-            echo "  $battery_level"
+            echo $battery_level
+            # echo "  $battery_level"
         fi
         ;;
     *)
