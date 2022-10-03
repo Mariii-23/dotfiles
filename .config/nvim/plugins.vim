@@ -55,6 +55,7 @@ call plug#begin(stdpath('data') . '/plugged')
 "Plug 'franbach/miramare'
 "call plug#end()
 
+Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -102,28 +103,29 @@ Plug 'nvim-lua/completion-nvim'
 " Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 "Themes
-Plug 'tomasiser/vim-code-dark'
+"Plug 'tomasiser/vim-code-dark'
 Plug 'wadackel/vim-dogrun'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ntk148v/vim-horizon'
-Plug 'morhetz/gruvbox'
-Plug 'phanviet/vim-monokai-pro'
+"Plug 'morhetz/gruvbox'
+"Plug 'phanviet/vim-monokai-pro'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'chriskempson/base16-vim'
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'sainnhe/sonokai'
+"Plug 'ghifarit53/tokyonight-vim'
+"Plug 'sainnhe/sonokai'
 Plug 'ayu-theme/ayu-vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'arzg/vim-colors-xcode'
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'arzg/vim-colors-xcode'
 Plug 'rakr/vim-one'
-Plug 'liuchengxu/space-vim-dark'
-Plug 'jacoborus/tender.vim'
-Plug 'srcery-colors/srcery-vim'
+"Plug 'liuchengxu/space-vim-dark'
+"Plug 'jacoborus/tender.vim'
+"Plug 'srcery-colors/srcery-vim'
 Plug 'wadackel/vim-dogrun'
 Plug 'ajmwagar/vim-deus'
 Plug 'franbach/miramare'
-Plug 'heraldofsolace/nisha-vim'
+"Plug 'heraldofsolace/nisha-vim'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -173,8 +175,10 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:ale_sign_error = '>>'
+"let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
 let b:ale_enabled = 1
-let g:ale_fixers = { 'elixir': ['mix_format'] ,'rust': ['rustfmt'] }
+let g:ale_fixers = { 'elixir': ['mix_format'] ,'rust': ['rustfmt'], 'javascript': ['eslint'], 'typescriptreact':['eslint'], 'typescript': 'eslint' }
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 
 " Bullets.vim

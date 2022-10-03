@@ -6,7 +6,8 @@ env:
   WINIT_X11_SCALE_FACTOR: "1.8"
 
 window:
-  background_opacity: 0.70
+  # background_opacity: 0.70
+  opacity: 0.35
 
   # Window dimensions (changes require restart)
   dimensions:

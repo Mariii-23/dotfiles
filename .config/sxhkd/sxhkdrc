@@ -27,22 +27,26 @@ super + shift + i
         # "$BROWSER" $(xclip -sel c -o)
         firefox -new-tab "https://www.duckduckgo.com/$(xclip -sel c -o)"
 
-super + shift + d
+super + control + d
          dmenu_run
 
 super + d
-         rofi -show run
+         rofi -theme "~/.config/rofi/config.rasi" -show run
         # dmenu_run
 
-super + control + d
-         rofi -show ssh
+
+super + shift + d
+         rofi -theme "~/.config/rofi/config.rasi" -show ssh
 
 super + shift  + o
 #rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n '{result}' | xclip '
-        rofi -show filebrowser -modi filebrowser
+        rofi -theme "~/.config/rofi/config.rasi" -show filebrowser -modi filebrowser
+
+super + shift  + d
+         rofi -theme "~/.config/rofi/config.rasi" -show window
 
 alt + d
-         rofi -show window
+    rofi -theme "~/.config/rofi/config.rasi" -show calc -modi calc -no-show-match -no-sort
 
 super + o
         pgrep spotify || spotify & disown; \
@@ -67,6 +71,12 @@ control + XF86Favorites
 
 super + XF86Favorites
       bash ~/dotfiles/scripts/wallpaper.sh 1
+
+control + space
+      dunstctl close
+
+control + alt + space
+      dunstctl close-all
 
 #
 # super + u
@@ -99,10 +109,10 @@ super + XF86Favorites
 
 control + @Print
         # Copia pra clipboard
-       scrot -f /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+      scrot -f /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 
 shift + @Print
-    scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f ; mv $f /tmp/ && sxiv -b -g $wx$h -p /tmp/$f && rm /tmp/$f'
+      scrot -fs /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f ; sxiv -b -g $wx$h -p $f && rm $f'
 
 #scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 
@@ -111,7 +121,8 @@ shift + @Print
 #         scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 
 super + @Print
-      flameshot gui -p ~/screenshot
+      flameshot gui
+      # -p ~/screenshot
 
 @Print
       scrot  ~/screenshot/%Y-%m-%d-%T-screenshot.png

@@ -1,2 +1,2 @@
 #!/bin/bash
-zathura ~/Projetos/latex/horario/horario.pdf & disown
+feh ~/Projetos/latex/horario/horarioMestrado.png & disown

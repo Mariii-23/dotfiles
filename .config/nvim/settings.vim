@@ -129,3 +129,8 @@ function! Toggle_transparent_background()
   endif
 endfunction
 nnoremap <C-t> :call Toggle_transparent_background()<CR>
+
+augroup reach
+  au!
+  autocmd BufNewFile,BufRead *.rsh set syntax=javascript
+augroup END

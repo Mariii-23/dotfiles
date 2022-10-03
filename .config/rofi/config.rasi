@@ -32,7 +32,7 @@ entry {
 }
 
 listview {
-  cycle: false;
+  cycle: true;
   margin: 0 0 -1px 0;
   scrollbar: false;
 }
@@ -46,27 +46,33 @@ element selected {
   background-color: #2e343f;
 }* {
       background-color: #282C33;
-        border-color: #2e343f;
-          text-color: #8ca0aa;
-            spacing: 0;
-                       width: 512px;
+      border-color: #2e343f;
+      text-color: #8ca0aa;
+      spacing: 0;
+      width: 512px;
+}
+
+#element.selected.normal {
+    background-color: #99FFFF;
+    text-color:       #99FFFF;
 }
 
 inputbar {
       border: 0 0 1px 0;
-                children: [prompt,entry];
+      children: [prompt,entry];
+      text-color: #8ca0aa;
 }
 
 prompt {
       padding: 16px;
-                 border: 0 1px 0 0;
+      border: 0 1px 0 0;
 }
 
-textbox {
+#textbox {
       background-color: #4e5056;
-        border: 0 0 1px 0;
-                  border-color: #282C33;
-                    padding: 8px 16px;
+      border: 0 0 1px 0;
+      border-color: #282C33;
+      padding: 8px 16px;
 }
 
 entry {
@@ -75,13 +81,13 @@ entry {
 
 listview {
       cycle: false;
-               margin: 0 0 -1px 0;
-                         scrollbar: false;
+      margin: 0 0 -1px 0;
+      scrollbar: false;
 }
 
 element {
       border: 0 0 1px 0;
-                padding: 16px;
+      padding: 16px;
 }
 
 element selected {

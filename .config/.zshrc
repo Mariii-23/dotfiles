@@ -5,19 +5,16 @@ autoload -U colors && colors
 
 export LANG=en_US.UTF-8
 
-# Alias from bash
-source ~/.config/bash/allAlias.sh
 #[[ -e ~/.bashrc ]] && emulate sh -c 'source ~/.bashrc'
 
 # Prompt
 export PROMPT=" %{$fg[blue]%}%~  %{$reset_color%} "
 
-source ~/.config/zsh/settings
 # ZSH=$HOME/.config/zsh/settings
 
 alias ':q'=exit
 
-neofetch
+export PATH_NITRILE="$PATH_NITRILE:~/nitrile/bin"
 
 # Startship
 # https://starship.rs/
@@ -32,6 +29,7 @@ setopt appendhistory     #Append history to the history file (no overwriting)
 setopt sharehistory      #Share history between all sessions.
 setopt incappendhistory  #Immediately append to the history file, not just when a term is killed
 setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

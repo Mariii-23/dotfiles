@@ -25,7 +25,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-horizon)
+;; (setq doom-theme 'doom-horizon)
+(setq doom-theme 'doom-henna)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -61,14 +62,27 @@
 
 
 ;;(setq doom-font (font-spec :family "Roboto Mono" :size 14))
-(setq doom-font (font-spec :family "Anonymous Pro Minus":size 24))
+(setq doom-font (font-spec :family "Anonymous Pro Minus":size 22))
 
 
 (add-hook 'c-mode-hook
         (lambda () (setq flycheck-clang-include-path
                        (list "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include"))))
 
-(setq org-superstar-headline-bullets-list '("" "❄" "🌹" "💙" "🐬"))
+;; (setq org-superstar-headline-bullets-list '("" "❄" "🌹" "💙" "🐬"))
+;; (use-package org-bullets
+;;   :custom
+;;   (org-bullets-bullet-list '("" "❄" "🌹" "💙" "🐬"))
+;;   (org-ellipsis "⤵")
+;;   :hook (org-mode . org-bullets-mode))
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode)
+  :config
+  (setq org-bullets-bullet-list '("" "⁑" "⁂" "❖" "✮" "✱" "✸"))
+  (setq org-ellipsis "⤵")
+)
+
 
 ;; Prolog
 (add-to-list 'auto-mode-alist '("\\.\\(pl\\|pro\\|lgt\\)" . prolog-mode))
@@ -77,4 +91,9 @@
 (after! lsp-rust
   (setq lsp-rust-server 'rust-analyzer))
 
+;; (setq doom/set-frame-opacity 92)
 ;; (require 'git-blame)
+
+(setq treemacs-width '25)
+(setq treemacs-git-mode 'deferred)
+(setq treemacs-position 'right)

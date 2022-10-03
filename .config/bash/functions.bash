@@ -7,30 +7,30 @@ Hdmi() {
       ;;
 
     "same")
-      xrandr --output "HDMI-1" --auto
+      xrandr --output "HDMI-1" --auto --rate 120
       # xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --same-as "eDP-1"
       ;;
     "left")
-      xrandr --output "HDMI-1" --auto
+      xrandr --output "HDMI-1" --auto --rate 120
       # xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --left-of "eDP-1"
       ;;
 
     "rigth")
-      xrandr --output "HDMI-1" --auto
+      xrandr --output "HDMI-1" --auto --rate 120
       #xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --right-of "eDP-1"
       ;;
 
     "above")
-      xrandr --output "HDMI-1" --auto
+      xrandr --output "HDMI-1" --auto --rate 120
       # xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --above "eDP-1"
       ;;
 
     "below")
-      xrandr --output "HDMI-1" --auto
+      xrandr --output "HDMI-1" --auto --rate 120
       #xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --below "eDP-1"
       ;;
@@ -49,49 +49,6 @@ Hdmi() {
       ;;
 
   esac
-}
-
-# github
-# command : git commit -m XX
-function commit() { git commit -m "$1";
-export -f commit}
-
-function gc() { git commit -m "$1";
-export -f gc
-}
-
-function gcp() { git commit -m "$1"; git push;
-export -f gcp
-}
-
-function ga() { git commit --amend -m "$1";
-export -f gcp
-}
-
-function gap() { git commit --amend -m "$1"; git push --force;
-export -f gcp
-}
-
-# git add + git commit + git push
-gup()
-{
-  if [[ "$1" != "" ]]; then
-    git add .
-    git commit -m "$1"
-    git push
-  else
-    git status
-  fi
-}
-
-gap() {
-  if [[ "$1" != "" ]]; then
-    git add .
-    git commit --amend -m "$1"
-    git push
-  else
-    git status
-  fi
 }
 
 # lock
@@ -143,6 +100,9 @@ extract() {
 
 send_site() {
    scp "$1" berrygood:~ }
+
+send() {
+   scp "$1" floopy:~/share/ }
 
 bandit() {
   if [[ "$1" != "" ]]; then
@@ -223,5 +183,5 @@ mv_last () {
 }
 
 u() {
-  cd "$HOME/3_Ano_Uni/1sem/$1" || cd "$HOME/3_Ano_Uni/2sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
+  cd "$HOME/1_Ano_Mestrado/1sem/$1" || cd "$HOME/1_Ano_Mestrado/2sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
 }
