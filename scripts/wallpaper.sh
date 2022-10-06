@@ -34,7 +34,11 @@ else
 fi
 
 # Check if this number is valid.
-if (( "$number" < 1 || "$number" > "$length"  )) ; then
+if (( "$number" < 1 )) ; then
+     number=$((length))
+fi
+
+if (( "$number" > "$length"  )) ; then
      number=1
 fi
 
