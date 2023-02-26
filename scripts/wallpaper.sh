@@ -55,4 +55,4 @@ name_file="$path/$name"
 feh --bg-fill "$name_file" --no-fehbg
 
 # Notify
-notify-send -i "$name_file" "Walkpaper changed" "$name  $number"
+# notify-send -i "$name_file" "Walkpaper changed" "$name  $number"

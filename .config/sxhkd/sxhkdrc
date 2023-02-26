@@ -9,6 +9,7 @@ super + shift + Return
 
 super + p
        i3-msg workspace number 9; \
+       herbstclient use_index 8; \
        discord
        # discord & disown ; \
        # lightcord & disown ; \
@@ -24,8 +25,8 @@ super + i
         #$BROWSER
 
 super + shift + i
+        firefox -new-window "https://www.duckduckgo.com/$(xclip -sel c -o)"
         # "$BROWSER" $(xclip -sel c -o)
-        firefox -new-tab "https://www.duckduckgo.com/$(xclip -sel c -o)"
 
 super + control + d
          dmenu_run
@@ -49,12 +50,13 @@ alt + d
     rofi -theme "~/.config/rofi/config.rasi" -show calc -modi calc -no-show-match -no-sort
 
 super + o
-        pgrep spotify || spotify & disown; \
+        pgrep spotify || LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify & disown; \
         i3-msg workspace number 10
         #alacritty --class 'floating-term' -e bash -c "spt"
 
 super  + m
        i3-msg workspace number 8; \
+       herbstclient use_index 7; \
        firefox -new-window https://www.youtube.com/
 
 super + {n,u}
@@ -213,7 +215,7 @@ super + q
         kill -9 $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
 
 super + shift + r
-        i3-msg restart ; killall sxhkd && sxhkd & disown
+        killall sxhkd && sxhkd & disown ; i3-msg restart ;
 
 super + shift + e
         i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
@@ -229,6 +231,7 @@ alt + Tab
 
 super + {h,j,k,l,space}
         i3-msg focus {left,down,up,right,mode_toggle}
+        herbtsclient focus {left,down,up,right,mode_toggle}
 
 ##### MOVE CONTAINER #####
 
