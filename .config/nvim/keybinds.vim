@@ -1,4 +1,4 @@
-vnoremap <C-c> "+y
+nnoremap <C-c> "+y
 
 " change tab
 nnoremap <C-Left> :tabprevious<CR>
