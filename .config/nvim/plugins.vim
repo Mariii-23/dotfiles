@@ -7,54 +7,6 @@ endif
 
 call plug#begin(stdpath('data') . '/plugged')
 
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-"Plug 'cohama/lexima.vim'
-"Plug 'preservim/nerdtree'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'godlygeek/tabular'
-"Plug 'octol/vim-cpp-enhanced-highlight'
-""Plug 'Shougo/deoplete.nvim'
-""Plug 'zchee/deoplete-clang'
-"Plug 'mattn/emmet-vim'
-"Plug 'alvan/vim-closetag'
-"Plug 'dkarter/bullets.vim'
-"Plug 'chrisbra/unicode.vim'
-"Plug 'itspriddle/vim-shellcheck'
-"Plug 'dense-analysis/ale'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
-"Plug 'ap/vim-css-color'
-"Plug 'tpope/vim-surround'
-"Plug 'Sammyalhashe/random_colorscheme.vim'
-"Plug 'rhysd/vim-clang-format'
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-"Plug 'kyazdani42/nvim-web-devicons'
-""themes
-"Plug 'tomasiser/vim-code-dark'
-"Plug 'wadackel/vim-dogrun'
-"Plug 'joshdick/onedark.vim'
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'ntk148v/vim-horizon'
-"Plug 'morhetz/gruvbox'
-"Plug 'phanviet/vim-monokai-pro'
-"Plug 'dracula/vim', { 'as': 'dracula' }
-"Plug 'chriskempson/base16-vim'
-"Plug 'ghifarit53/tokyonight-vim'
-"Plug 'sainnhe/sonokai'
-"Plug 'ayu-theme/ayu-vim'
-"Plug 'drewtempelmeyer/palenight.vim'
-"Plug 'arzg/vim-colors-xcode'
-"Plug 'rakr/vim-one'
-"Plug 'liuchengxu/space-vim-dark'
-"Plug 'jacoborus/tender.vim'
-"Plug 'srcery-colors/srcery-vim'
-"Plug 'wadackel/vim-dogrun'
-"Plug 'ajmwagar/vim-deus'
-"Plug 'franbach/miramare'
-"call plug#end()
-
 Plug 'w0rp/ale'
 
 Plug 'vim-airline/vim-airline'
@@ -62,10 +14,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'cohama/lexima.vim'
 Plug 'preservim/nerdtree'
-"Plug 'sheerun/vim-polyglot'
 Plug 'godlygeek/tabular'
 Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-clang'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
@@ -86,51 +36,26 @@ Plug 'voldikss/vim-floaterm'
 Plug 'axvr/org.vim'
 Plug 'rust-lang/rust.vim'
 
-"Plug 'b3nj5m1n/kommentary'
-
-
-" Collection of common configurations for the Nvim LSP client
-" Plug 'neovim/nvim-lspconfig'
-" Extensions to built-in LSP, for example, providing type inlay hints
 Plug 'nvim-lua/lsp_extensions.nvim'
 " Autocompletion framework for built-in LSP
 Plug 'nvim-lua/completion-nvim'
 
-"Plug 'hrsh7th/nvim-compe'
-
-" Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
-"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
-
-"Themes
-"Plug 'tomasiser/vim-code-dark'
 Plug 'wadackel/vim-dogrun'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ntk148v/vim-horizon'
-"Plug 'morhetz/gruvbox'
-"Plug 'phanviet/vim-monokai-pro'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'chriskempson/base16-vim'
-"Plug 'ghifarit53/tokyonight-vim'
-"Plug 'sainnhe/sonokai'
 Plug 'ayu-theme/ayu-vim'
-"Plug 'drewtempelmeyer/palenight.vim'
-"Plug 'arzg/vim-colors-xcode'
 Plug 'rakr/vim-one'
-"Plug 'liuchengxu/space-vim-dark'
-"Plug 'jacoborus/tender.vim'
-"Plug 'srcery-colors/srcery-vim'
 Plug 'wadackel/vim-dogrun'
 Plug 'ajmwagar/vim-deus'
 Plug 'franbach/miramare'
-"Plug 'heraldofsolace/nisha-vim'
-"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#clang_complete_database = 1
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#sources#clang#clang_complete_database = 1
 let g:ale_c_clang_options = '-x c'
 let g:ale_c_clangtidy_options = '-x c'
 let g:ale_echo_msg_format = '%linter%: %s'
@@ -247,3 +172,11 @@ let g:clang_format#style_options = {
         \   'BeforeElse' : 'true',
         \  },
         \ }
+
+let g:highlightedyank_highlight_duration = 100
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let g:UltiSnipsExpandTrigger="<S-Tab>"

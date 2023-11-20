@@ -29,19 +29,6 @@ $hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
 
-#########################################################
-###################    Start App  ######################
-
-bash ~/.config/polybar/launch.sh
-nitrogen --restore
-picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx
-dunst --config ~/.config/dunst/dunstrc
-bash ~/dotfiles/scripts/battery.sh
-emacs --daemon
-flameshot
-#########################################################
-
-
 
 
 # remove all existing keybindings
@@ -72,8 +59,8 @@ $hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
 # create an empty frame at the specified direction
-$hc keybind $Mod-v  split   bottom  0.5 , focus down
-$hc keybind $Mod-c  split   right   0.5 , focus right
+$hc keybind $Mod-c  split   bottom  0.5
+$hc keybind $Mod-v  split   right   0.5
 # let the current frame explode into subframes
 $hc keybind $Mod-Control-space split explode
 
@@ -104,14 +91,15 @@ $hc keybind $Mod-Shift-Tab  use_index -1 --skip-visible
 
 # layouting
 $hc keybind $Mod-q remove
-$hc keybind $Mod-r remove
-$hc keybind $Mod-Shift-space floating toggle
+$hc keybind $Mod-r rotate
+
+$hc keybind $Mod-Shift-space set_attr clients.focus.floating toggle
 $hc keybind $Mod-f fullscreen toggle
 
 # $hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
 $hc keybind $Mod-Shift-f  \
             or , and . compare tags.focus.curframe_wcount = 2 \
-                     . cycle_layout +1 max vertical
+                     . cycle_layout +1 max horizontal
                 , cycle_layout +1
 
 
@@ -132,6 +120,34 @@ $hc keybind $Mod-space                                                          
 $hc keybind $Mod-w set_layout vertical
 $hc keybind $Mod-e set_layout horizontal
 $hc keybind $Mod-a set_layout grid
+$hc keybind $Mod-t floating toggle
+
+
+$hc keybind $Mod-apostrophe or \
+    ^ and \
+        + new_attr bool tags.focus.my_pseudo_tiled \
+        + chain \
+            . split left 0.25 \
+            . focus left \
+            . set_layout vertical \
+            . focus right \
+            . split right 0.67 \
+            . focus right \
+            . set_layout vertical \
+            . focus left \
+    ^ and \
+        + remove_attr tags.focus.my_pseudo_tiled \
+        + chain \
+            . focus_edge -i right \
+            . remove \
+            . focus_edge -i left \
+            . remove
+
+$hc keybind $Mod-Shift-apostrophe spawn bash -c "
+termFromHere
+$hc chain . split right 0.65 . shift right . set_layout vertical
+"
+
 
 # mouse
 $hc mouseunbind --all
@@ -149,7 +165,7 @@ $hc mousebind $Mod-Button3 resize
 # $hc keybind $Mod-Tab         cycle_all +1
 # $hc keybind $Mod-Shift-Tab   cycle_all -1
 # $hc keybind $Mod-c cycle
-# $hc keybind $Mod-i jumpto urgent
+$hc keybind $Mod-Control-i jumpto urgent
 
 # theme
 $hc attr theme.tiling.reset 1
@@ -196,7 +212,7 @@ for state in active urgent normal ; do
         attr theme.${state}.outer_color C
 done
 $hc attr theme.tiling.outer_width 1
-$hc attr theme.background_color '#141414'
+$hc attr theme.background_color '#2aa198'
 
 $hc set window_gap 6
 $hc set frame_padding 0
@@ -220,6 +236,7 @@ $hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 $hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 $hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 $hc rule fixedsize floating=on
+$hc rule class="Discord" tag=9
 
 $hc set tree_style '╾│ ├└╼─┐'
 
@@ -246,3 +263,22 @@ for monitor in $($hc list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" "$monitor" &
 done
+
+
+#########################################################
+###################    Start App  ######################
+#########################################################
+
+if pgrep -u "$LOGNAME" 'bash'; then
+    kill -9 $(ps aux | grep battery.sh  | awk '{ print $2 }')
+fi
+
+bash ~/.config/polybar/launch.sh
+nitrogen --restore
+dunst --config ~/.config/dunst/dunstrc &
+bash ~/dotfiles/scripts/battery.sh &
+picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx &
+emacs --daemon &
+flameshot &
+nm-applet &
+#########################################################

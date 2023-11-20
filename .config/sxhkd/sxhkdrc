@@ -74,6 +74,12 @@ control + XF86Favorites
 super + XF86Favorites
       bash ~/dotfiles/scripts/wallpaper.sh 1
 
+XF86Display
+    monitor 1
+
+super + XF86Display
+    monitor 0
+
 control + space
       dunstctl close
 

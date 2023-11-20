@@ -32,7 +32,7 @@ nnoremap <C-l> <C-w>l
 
 nnoremap s :%s/\<<C-r><C-w>\>/
 nnoremap S :%s//g<Left><Left>
-vnoremap s :%s/\<<C-r><C-w>\>/
+nnoremap s :%s/\<<C-r><C-w>\>/
 
 " leader = \
 map <Leader>th <C-w>t<C-w>H

@@ -1,17 +1,3 @@
-"augroup auFileTypes
-"  autocmd!
-"  autocmd FileType markdown setlocal textwidth=80
-"augroup end
-"
-"if (empty($TMUX))
-"  if (has("nvim"))
-"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
-
 augroup auFileTypes
   autocmd!
   autocmd FileType markdown setlocal textwidth=80
@@ -89,7 +75,7 @@ colorscheme ayu
 let g:deoplete#enable_at_startup = 1
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd FileType c ClangFormatAutoEnable
+"autocmd FileType c ClangFormatAutoEnable
 au BufRead,BufNewFile * setlocal textwidth=80
 autocmd! BufNewFile,BufRead,BufReadPre,BufWritePost *.h set filetype=c
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags "autocomplete html
