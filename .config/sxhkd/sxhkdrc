@@ -1,7 +1,7 @@
 super + Return
       alacritty --config-file ~/.config/alacritty/alacrittyTmux.yml
 
-control + shift 
+control + shift
       terminator
 
 super + shift + Return
@@ -50,6 +50,7 @@ alt + d
     rofi -theme "~/.config/rofi/config.rasi" -show calc -modi calc -no-show-match -no-sort
 
 super + o
+        herbstclient use_index 9; \
         pgrep spotify || LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify & disown; \
         i3-msg workspace number 10
         #alacritty --class 'floating-term' -e bash -c "spt"

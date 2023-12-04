@@ -247,6 +247,12 @@ else
     daemonise sxhkd -m -1 -r "$CACHE_DIR/sxhkd.log" -s "$CACHE_DIR/sxhkd.fifo"
 fi
 
+if pgrep -u "$LOGNAME" -f "emacs --daemon"; then
+    pkill -SIGUSR1 -f "emacs --daemon"
+else
+    emacs --daemon
+fi
+
 # unlock, just to be sure
 $hc unlock
 
@@ -278,7 +284,6 @@ nitrogen --restore
 dunst --config ~/.config/dunst/dunstrc &
 bash ~/dotfiles/scripts/battery.sh &
 picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx &
-emacs --daemon &
 flameshot &
 nm-applet &
 #########################################################
