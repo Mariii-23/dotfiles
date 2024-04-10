@@ -4,6 +4,7 @@ Hdmi() {
   case "$1" in
     "off")
       xrandr --output "HDMI-1" --off
+      xrandr --output "DP-1" --off
       ;;
 
     "same")
@@ -15,24 +16,28 @@ Hdmi() {
       xrandr --output "HDMI-1" --auto --rate 120
       # xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --left-of "eDP-1"
+      # herbstclient set_monitors  1920x1080+0+0 1920x1080+1920+0
       ;;
 
     "rigth")
       xrandr --output "HDMI-1" --auto --rate 120
       #xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --right-of "eDP-1"
+      # herbstclient set_monitors  1920x1080+0+0 1920x1080+1920+0
       ;;
 
     "above")
       xrandr --output "HDMI-1" --auto --rate 120
       # xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --above "eDP-1"
+      # herbstclient set_monitors  1920x1080+0+0 1920x1080+0+1080
       ;;
 
     "below")
       xrandr --output "HDMI-1" --auto --rate 120
       #xrandr --output "HDMI-1" --mode "mine" --auto
       xrandr --output "eDP-1" --auto --output "HDMI-1" --below "eDP-1"
+      # herbstclient set_monitors  1920x1080+0+0 1920x1080+0+1080
       ;;
 
     "tv")
@@ -42,6 +47,14 @@ Hdmi() {
 
     "pc")
       xrandr --output "eDP-1" --auto
+      ;;
+
+    "dtx")
+      herbstclient set_monitors  2560x1440+0+0 2560x1440+2560+0
+      xrandr --output "HDMI-1" --auto --rate 120
+      xrandr --output "DP-1" --mode "2560x1440" --rate 120
+      xrandr --output "eDP-1" --auto --output "HDMI-1" --above "eDP-1"
+      xrandr --output "eDP-1" --auto --output "DP-1" --right-of "HDMI-1"
       ;;
 
     *)
@@ -99,10 +112,12 @@ extract() {
 }
 
 send_site() {
-   scp "$1" berrygood:~ }
+   scp "$1" berrygood:~
+ }
 
 send() {
-   scp "$1" floopy:~/share/ }
+   scp "$1" floopy:~/share/
+}
 
 bandit() {
   if [[ "$1" != "" ]]; then
@@ -183,5 +198,5 @@ mv_last () {
 }
 
 u() {
-  cd "$HOME/1_Ano_Mestrado/1sem/$1" || cd "$HOME/1_Ano_Mestrado/2sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
+  cd "$HOME/1_Ano_Mestrado/2sem/$1" || cd "$HOME/1_Ano_Mestrado/1sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
 }

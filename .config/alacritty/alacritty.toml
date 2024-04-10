@@ -1,0 +1,283 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x5b6268"
+blue = "0xcaa9fa"
+cyan = "0x2aa198"
+green = "0x55C149"
+magenta = "0xc678dd"
+red = "0xCE2D2D"
+white = "0xeee8d5"
+yellow = "0xecbe7b"
+
+[colors.normal]
+black = "0x1c1f24"
+blue = "0x2aa198"
+cyan = "0x2aa198"
+green = "0x859900"
+magenta = "0x25D299"
+red = "0xB00000"
+white = "0xdfdfdf"
+yellow = "0xB35C5C"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[colors.selection]
+background = "0x006666"
+text = "0x000000"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.8"
+
+[font]
+size = 9.5
+
+[font.bold]
+family = "Anonymous Pro Minus"
+style = "Bold"
+
+[font.bold_italic]
+family = "SauceCodePro Nerd Font"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Anonymous Pro Minus"
+style = "Bold"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "D"
+mods = "Super"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+chars = "\u0002:"
+key = "Tab"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002v"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002b"
+key = "B"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+chars = "\u0002w"
+key = "W"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00020"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 5000
+multiplier = 1
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+opacity = 0.1
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 2

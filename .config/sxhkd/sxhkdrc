@@ -1,8 +1,8 @@
 super + Return
-      alacritty --config-file ~/.config/alacritty/alacrittyTmux.yml
+      alacritty --config-file ~/.config/alacritty/alacrittyTmux.toml
 
 control + shift
-      terminator
+      terminator 
 
 super + shift + Return
       alacritty
@@ -238,7 +238,7 @@ alt + Tab
 
 super + {h,j,k,l,space}
         i3-msg focus {left,down,up,right,mode_toggle}
-        herbtsclient focus {left,down,up,right,mode_toggle}
+        # herbtsclient focus {left,down,up,right,mode_toggle}
 
 ##### MOVE CONTAINER #####
 

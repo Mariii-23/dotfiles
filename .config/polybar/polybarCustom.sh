@@ -14,7 +14,7 @@ case "$1" in
     "mic")
         bool=$(pacmd list-sources | grep -A 7 RUNNING | tail -1 | cut -d ' ' -f 2)
 
-        if [ "$bool" == yes ]
+        if [ "$bool" == yes ] || [ "$bool" == "" ]
         then
             echo 
         else

@@ -14,6 +14,10 @@ alias gs='git status'
 
 alias gl='git log'
 
+alias gb='git branch'
+
+alias gd='git diff'
+
 # command : git restore credentials
 alias git_restore='git config --global credential.helper wincred'
 
