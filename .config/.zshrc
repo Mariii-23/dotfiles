@@ -48,7 +48,9 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;35m'
 
-#bindkey '^R' fzf-history
-#bindkey '^R' fzf-tmux
+# bindkey '^R' fzf-history
+# bindkey '^R' fzf-tmux
 
 export LVIM="/home/mari/.config/lvim:$LVIM"
+
+export PATH="$HOME/.cargo/bin:$PATH"
