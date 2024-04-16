@@ -55,3 +55,9 @@ zsh-syntax-highlighting
 llvm
 clang
 htop
+herbstluftwm
+bat
+jq
+imagemagick
+xcape
+zsh-completions

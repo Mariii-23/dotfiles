@@ -19,7 +19,13 @@ daemonise() { (
     while read -r n; do
         if ((n > 2)); then
             [[ "$1" = sxhkd ]] && echo "closing $n"
-            eval "exec $n>&-"
+            if eval "[[ -e /proc/$self/fd/$n ]]"; then
+                eval "exec $n>&-"
+                echo " descriptor $n" > /tmp/wtf
+            else
+                echo "Error: Invalid file descriptor $n"
+            fi
+            # eval "exec $n>&-"
         fi
     done < <(find /proc/$self/fd -type l -printf '%f\n')
     "$@" &
@@ -247,11 +253,6 @@ else
     daemonise sxhkd -m -1 -r "$CACHE_DIR/sxhkd.log" -s "$CACHE_DIR/sxhkd.fifo"
 fi
 
-if pgrep -u "$LOGNAME" -f "emacs --daemon"; then
-    pkill -SIGUSR1 -f "emacs --daemon"
-else
-    emacs --daemon
-fi
 
 # unlock, just to be sure
 $hc unlock
@@ -279,11 +280,17 @@ if pgrep -u "$LOGNAME" 'bash'; then
     kill -9 $(ps aux | grep battery.sh  | awk '{ print $2 }')
 fi
 
+if pgrep -u "$LOGNAME" -f "emacs --daemon"; then
+    pkill -SIGUSR1 -f "emacs --daemon"
+else
+    emacs --daemon
+fi
+
 bash ~/.config/polybar/launch.sh
 nitrogen --restore
-dunst --config ~/.config/dunst/dunstrc &
+dunst -config ~/.config/dunst/dunstrc &
 bash ~/dotfiles/scripts/battery.sh &
-picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx &
+picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx --daemon
 flameshot &
 nm-applet &
 #########################################################
