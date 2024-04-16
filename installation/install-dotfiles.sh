@@ -26,7 +26,8 @@ main() {
 
    if [[ "$#" -eq 0 ]]
    then
-        packages ; symlinks ; rest
+        packages
+        # ; symlinks ; rest
    else
       for fun in "$@"
       do
@@ -77,10 +78,6 @@ packages(){
 
    #############################install every other packages #########################################################
 
-   # spotify keys
-   curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
-   gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-
    while read -r packageName
    do
       sudo pacman -S --noconfirm --needed "$packageName" || pacman -Qi "$packageName" || yay -S "$packageName" </dev/tty
@@ -91,13 +88,6 @@ packages(){
 
    ###install rust####
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-   ###################install python packages ###############################################################
-
-   pip install -r "$installation_dir/python-packages.txt"
-   #pynvim package for deoplete and i3 package for alternating layouts
-   nvim +PlugInstall +qall
-
 
 }
 
