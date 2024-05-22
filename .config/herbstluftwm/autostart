@@ -109,9 +109,9 @@ $hc keybind $Mod-Shift-f  \
                 , cycle_layout +1
 
 
-$hc keybind $Mod-Shift-d set_attr clients.focus.decorated toggle
-$hc keybind $Mod-Control-m set_attr clients.focus.minimized true
-$hc keybind $Mod-Shift-m jumpto last-minimized
+$hc keybind $Mod-Shift-s set_attr clients.focus.decorated toggle
+$hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
+$hc keybind $Mod-Control-m jumpto last-minimized
 $hc keybind $Mod-s pseudotile toggle
 
 # The following cycles through the available layouts within a frame, but skips
@@ -290,7 +290,7 @@ bash ~/.config/polybar/launch.sh
 nitrogen --restore
 dunst -config ~/.config/dunst/dunstrc &
 bash ~/dotfiles/scripts/battery.sh &
-picom --config ~/.config/picom/picom.conf --experimental-backends --backend glx --daemon
+picom --config ~/.config/picom/picom.conf &
 flameshot &
 nm-applet &
 #########################################################

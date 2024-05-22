@@ -2,4 +2,4 @@
 
 #systemctl suspend
 
-./blur_lock.sh && disown
+/bin/blur_lock.sh && disown
