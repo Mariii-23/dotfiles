@@ -178,7 +178,7 @@ control + mod + l
 ###### BRIGHTNESS ######################
 
 XF86MonBrightness{Up,Down}
-        brightnessctl set 5000{+,-}
+        brightnessctl set 5%{+,-}
 
 ######### MEDIA ###########
 
