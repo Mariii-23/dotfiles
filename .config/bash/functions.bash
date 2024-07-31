@@ -65,6 +65,14 @@ Hdmi() {
       xrandr --output "DP-1" --auto --left-of "HDMI-1"
       ;;
 
+    "dtx2")
+      herbstclient set_monitors 2560x1440+0+1440 2560x1440+0+0 2560x1440+2560+0
+      xrandr --output "DP-1" --mode "2560x1440" --rate 120 --above "eDP-1"
+      xrandr --output "DP-1" --auto --above "eDP-1"
+      xrandr --output "HDMI-1" --mode "2560x1440" --rate 120
+      xrandr --output "HDMI-1" --auto --right-of "DP-1"
+      ;;
+
     *)
       echo "$1" is not valid
       ;;
