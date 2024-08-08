@@ -14,9 +14,18 @@ alias gs='git status'
 
 alias gl='git log'
 
+alias gf='git fetch -p'
+
 alias gb='git branch'
 
+alias gbd='git branch -vv | grep ": gone]" | awk "{print \$1}" | xargs git branch -D'
+
+
+
+
 alias gd='git diff'
+
+alias gt='git log --graph --pretty=oneline --all --abbrev-commit --decorate'
 
 # command : git restore credentials
 alias git_restore='git config --global credential.helper wincred'

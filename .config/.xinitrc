@@ -18,6 +18,6 @@ sxhkd &>/dev/null & disown
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape'
 
-exec i3
+exec herbstluftwm  &>/tmp/log_.txt
 # exec bswpm
 #redshift -O3500; xset r rate 300 50; exec dwm

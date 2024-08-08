@@ -2,7 +2,7 @@ super + Return
       alacritty --config-file ~/.config/alacritty/alacrittyTmux.toml
 
 control + shift
-      terminator 
+      terminator
 
 super + shift + Return
       alacritty
@@ -29,15 +29,12 @@ super + shift + i
         # "$BROWSER" $(xclip -sel c -o)
 
 super + control + d
-         dmenu_run
+         rofi -theme "~/.config/rofi/config.rasi" -show ssh
 
 super + d
          rofi -theme "~/.config/rofi/config.rasi" -show run
-        # dmenu_run
 
-
-super + shift + d
-         rofi -theme "~/.config/rofi/config.rasi" -show ssh
+#super + shift + d
 
 super + shift  + o
 #rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n '{result}' | xclip '
@@ -47,7 +44,7 @@ super + shift  + d
          rofi -theme "~/.config/rofi/config.rasi" -show window
 
 alt + d
-    rofi -theme "~/.config/rofi/config.rasi" -show calc -modi calc -no-show-match -no-sort
+        dmenu_run
 
 super + o
         herbstclient use_index 9; \
@@ -181,7 +178,7 @@ control + mod + l
 ###### BRIGHTNESS ######################
 
 XF86MonBrightness{Up,Down}
-        brightnessctl set 5000{+,-}
+        brightnessctl set 5%{+,-}
 
 ######### MEDIA ###########
 
@@ -211,66 +208,67 @@ XF86Audio{Prev,Next}
         playerctl {previous, next}
 
 
+########################################    I3       ##########################################
 ######################################## WM KEYBINDS ##########################################
 
 ######### MISC ###########
 
-super + shift + q
-        i3-msg kill
+# super + shift + q
+#         i3-msg kill
 
 super + q
         kill -9 $(xprop -id `xdotool getwindowfocus` | grep '_NET_WM_PID' | grep -oE '[[:digit:]]*$')
 
-super + shift + r
-        killall sxhkd && sxhkd & disown ; i3-msg restart ;
+# super + shift + r
+#         killall sxhkd && sxhkd & disown ; i3-msg restart ;
 
-super + shift + e
-        i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
-
+# super + shift + e
+#         i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+#
 
 ####### MOVE FOCUS #######
 
-super + {1-9,0}
-        i3-msg workspace {1-9,10}
-
-alt + Tab
-        i3-msg workspace {back_and_forth}
-
-super + {h,j,k,l,space}
-        i3-msg focus {left,down,up,right,mode_toggle}
-        # herbtsclient focus {left,down,up,right,mode_toggle}
+# super + {1-9,0}
+#         i3-msg workspace {1-9,10}
+#
+# alt + Tab
+#         i3-msg workspace {back_and_forth}
+#
+# super + {h,j,k,l,space}
+#         i3-msg focus {left,down,up,right,mode_toggle}
+#         # herbtsclient focus {left,down,up,right,mode_toggle}
 
 ##### MOVE CONTAINER #####
 
-super + shift + {1-9,0}
-        i3-msg move container to workspace {1-9,10}
-
-super + shift + {h,j,k,l}
-        i3-msg move {left,down,up,right}
-
-control + super + {h,j,k,l,1-9,10}
-        i3-msg move workspace to output {left,down,up,right,1-9,10}
-
-#### RESIZE CONTAINER ####
-
-alt + {h,j,k,l}
-       i3-msg resize {shrink width,grow height,shrink height,grow width} 5 px or 5 ppt
+# super + shift + {1-9,0}
+#         i3-msg move container to workspace {1-9,10}
+#
+# super + shift + {h,j,k,l}
+#         i3-msg move {left,down,up,right}
+#
+# control + super + {h,j,k,l,1-9,10}
+#         i3-msg move workspace to output {left,down,up,right,1-9,10}
+#
+# #### RESIZE CONTAINER ####
+#
+# alt + {h,j,k,l}
+#        i3-msg resize {shrink width,grow height,shrink height,grow width} 5 px or 5 ppt
 
 ######### LAYOUT #########
 
-super + shift + {_,x}
-        i3-msg floating toggle ;\
-        i3-msg {_,sticky toggle}
-
-
+# super + shift + {_,x}
+#         i3-msg floating toggle ;\
+#         i3-msg {_,sticky toggle}
+#
+#
 # Make the currently focused window a scratchpad
-super + shift + minus
-      i3-msg move scratchpad
+# super + shift + minus
+#       i3-msg move scratchpad
 #bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-super + minus
-      i3-msg scratchpad show
+# super + minus
+#       i3-msg scratchpad show
 #bindsym $mod+minus scratchpad show
 
 # super + shift + x
@@ -279,25 +277,25 @@ super + minus
 # super + shift + x
 #       i3-msg sticky disable
 
-super + shift +  s
-        if [ ! $(i3-msg "scratchpad show" 1>/dev/null ) ];then
-           i3-msg "move scratchpad"
-        fi
-
-super + {c,v}
-      i3-msg split {h,v}
-
-super + f
-      i3-msg fullscreen toggle
-
-super + {s,w,e}
-      i3-msg layout {stacking,tabbed,toggle split}
-
-super + shift + space
-      i3-msg floating toggle resize set 55 ppt 70 ppt
-
-super + space
-      focus mode_toggle
-
-super + a
-      focus parent
+#super + shift +  s
+#        if [ ! $(i3-msg "scratchpad show" 1>/dev/null ) ];then
+#           i3-msg "move scratchpad"
+#        fi
+#
+#super + {c,v}
+#      i3-msg split {h,v}
+#
+#super + f
+#      i3-msg fullscreen toggle
+#
+#super + {s,w,e}
+#      i3-msg layout {stacking,tabbed,toggle split}
+#
+#super + shift + space
+#      i3-msg floating toggle resize set 55 ppt 70 ppt
+#
+#super + space
+#      focus mode_toggle
+#
+#super + a
+#      focus parent
