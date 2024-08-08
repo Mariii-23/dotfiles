@@ -11,19 +11,20 @@ dest_dir=~/.config
 .config/ranger
 .config/rofi
 .config/sxhkd
-.config/startship.toml
+.config/starship.toml
 .config/terminator
 .config/zathura
 .config/zsh
+.config/herbstluftwm
 
 dest_dir=~
 .config/.xinitrc
 .config/.bash_logout
 .config/.bash_profile
 .config/.bashrc
-.config/.doom.d
 .config/.tmux.conf
 .config/.vimrc
 .config/.zlogin
 .config/.zshenv
 .config/.zshrc
+.config/.doom.d
