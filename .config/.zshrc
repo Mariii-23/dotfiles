@@ -115,5 +115,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export GEM_HOME="$HOME/.local/share/gem/ruby/3.4.0"
+export PATH="$GEM_HOME/bin:$PATH"
+
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/mari/.dotnet/tools"
+
+alias mesa_pc="xinput map-to-output \"HUION Huion Tablet Pen Pen (0)\" eDP-1"
+alias mesa_monitor="xinput map-to-output \"HUION Huion Tablet Pen Pen (0)\" HDMI-1"

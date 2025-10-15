@@ -154,6 +154,8 @@ termFromHere
 $hc chain . split right 0.65 . shift right . set_layout vertical
 "
 
+# scratchpad
+$hc keybind $Mod-x spawn "$(dirname "$0")/scratchpad"
 
 # mouse
 $hc mouseunbind --all
@@ -174,6 +176,9 @@ $hc mousebind $Mod-Button3 resize
 $hc keybind $Mod-Control-i jumpto urgent
 
 # theme
+$hc attr settings.frame_active_opacity 0
+$hc attr settings.frame_normal_opacity 100
+
 $hc attr theme.tiling.reset 1
 $hc attr theme.floating.reset 1
 $hc set frame_border_active_color '#2aa198'

@@ -216,3 +216,16 @@ mv_last () {
 u() {
   cd "$HOME/1_Ano_Mestrado/2sem/$1" || cd "$HOME/1_Ano_Mestrado/1sem/$1" || cd "$HOME/2_Ano_Uni/1sem/$1" || cd "$HOME/2_Ano_Uni/2sem/$1"
 }
+
+# scp_tese() {
+#     if [ -z "$1" ] || [ -z "$2" ]; then
+#         echo "Uso: scp_copy <origem> <destino>"
+#         return 1
+#     fi
+
+#     # Variáveis para os caminhos
+#     local origem="$1"
+#     local destino="$2"
+
+#     scp -i ~/.ssh/dtxbooking.pem -o ProxyJump=tese dae@192.168.177.65:~/"$origem" "$destino"
+# }

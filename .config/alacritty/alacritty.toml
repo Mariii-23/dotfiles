@@ -31,10 +31,10 @@ text = "0x000000"
 
 [env]
 TERM = "xterm-256color"
-WINIT_X11_SCALE_FACTOR = "1.8"
+WINIT_X11_SCALE_FACTOR = "1.5"
 
 [font]
-size = 9.5
+size = 14
 
 [font.bold]
 family = "Anonymous Pro Minus"
@@ -262,7 +262,7 @@ multiplier = 1
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]

@@ -66,6 +66,7 @@ noto-fonts
 fonts-noto
 ttf-font-awesome
 ttf-font-awesome-4
+ttf-unifont
 nerd-fonts-hack
 hack
 zscroll-git
