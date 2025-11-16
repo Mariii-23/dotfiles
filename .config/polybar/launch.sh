@@ -5,11 +5,23 @@ killall -q polybar
 # If all your bars have ipc enabled, you can also use
 # polybar-msg cmd quit
 
-# Launch bar1 and bar2
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log /tmp/polybar3.log
-polybar example >>/tmp/polybar1.log 2>&1 & disown
-polybar MONITOR >>/tmp/polybar2.log 2>&1 & disown
-polybar MONITOR2 >>/tmp/polybar3.log 2>&1 & disown
+# Detecta monitores conectados
+connected_monitors=$(xrandr --query | grep " connected" | cut -d ' ' -f1)
 
+echo "Monitores conectados: $connected_monitors"
 
-echo "Bars launched..."
+if echo "$connected_monitors" | grep -q "^eDP-1$"; then
+    launch_bar "example" "eDP-1"
+else
+    echo "eDP-1 não conectado, barra 'example' não será iniciada."
+fi
+
+bars=("MONITOR-HDMI-1" "MONITOR-HDMI-2" "MONITOR-DP-1" "MONITOR-DP-2")
+
+for bar in "${bars[@]}"; do
+    log_file="/tmp/polybar-${bar,,}.log"  # nome do log em minúsculas
+    echo "--- Starting $bar ---" | tee -a "$log_file"
+    polybar "$bar" >>"$log_file" 2>&1 &
+done
+
+echo "All bars launched!"

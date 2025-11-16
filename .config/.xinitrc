@@ -11,7 +11,7 @@ xrandr --addmode HDMI-1 "1366x768-1"
 xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Click Method Enabled'0 1
 xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Tapping Enabled' 1
 
-sxhkd &>/dev/null & disown
+sxhkd &>/tmp/log_sxhkd.txt & disown
 
 
 #setxkbmap -option caps:swapescape

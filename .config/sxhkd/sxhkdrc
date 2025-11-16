@@ -72,6 +72,16 @@ control + XF86Favorites
 super + XF86Favorites
       bash ~/dotfiles/scripts/wallpaper.sh 1
 
+F8
+    bash ~/dotfiles/scripts/wallpaper.sh
+
+control + F8
+        bash ~/dotfiles/scripts/wallpaper.sh 0
+
+super + F8
+      bash ~/dotfiles/scripts/wallpaper.sh 1
+
+
 XF86Display
     monitor 1
 
