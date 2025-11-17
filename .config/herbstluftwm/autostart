@@ -268,6 +268,8 @@ $hc unlock
 # or simply:
 $hc detect_monitors
 
+~/dotfiles/scripts/configure_monitors.sh &
+
 # find the panel
 panel=~/.config/herbstluftwm/panel.sh
 [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
