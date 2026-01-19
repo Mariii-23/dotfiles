@@ -34,8 +34,6 @@ super + control + d
 super + d
          rofi -theme "~/.config/rofi/config.rasi" -show run
 
-#super + shift + d
-
 super + shift  + o
 #rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n '{result}' | xclip '
         rofi -theme "~/.config/rofi/config.rasi" -show filebrowser -modi filebrowser
@@ -60,9 +58,6 @@ super  + m
 super + {n,u}
       {pavucontrol,emacsclient -c}
 
-super + shift + u
-      intellij-idea-ultimate-edition
-
 XF86Favorites
     bash ~/dotfiles/scripts/wallpaper.sh
 
@@ -71,6 +66,16 @@ control + XF86Favorites
 
 super + XF86Favorites
       bash ~/dotfiles/scripts/wallpaper.sh 1
+
+F8
+    bash ~/dotfiles/scripts/wallpaper.sh
+
+control + F8
+        bash ~/dotfiles/scripts/wallpaper.sh 0
+
+super + F8
+      bash ~/dotfiles/scripts/wallpaper.sh 1
+
 
 XF86Display
     monitor 1

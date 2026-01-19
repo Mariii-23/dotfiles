@@ -12,6 +12,11 @@ case "$1" in
         ;;
 
     "mic")
+        if ! command -v pacmd &> /dev/null; then
+            echo 
+            return
+        fi
+
         bool=$(pacmd list-sources | grep -A 7 RUNNING | tail -1 | cut -d ' ' -f 2)
 
         if [ "$bool" == yes ] || [ "$bool" == "" ]
