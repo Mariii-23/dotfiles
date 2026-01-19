@@ -2,6 +2,8 @@
 ### ALIAS
 ######################
 
+alias sudo='sudo '
+
 #if hash exa &>/dev/null
 #then
 alias ls='exa'
