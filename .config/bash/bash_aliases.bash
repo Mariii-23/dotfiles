@@ -3,6 +3,8 @@
 ######################
 alias s="sxiv"
 
+alias sudo='sudo '
+
 alias conda_="source /opt/anaconda/bin/activate root"
 
 alias rm="rm -v"

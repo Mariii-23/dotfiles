@@ -291,6 +291,8 @@ else
     emacs --daemon
 fi
 
+pkill -x flameshot 2>/dev/null
+
 bash ~/.config/polybar/launch.sh
 nitrogen --restore
 dunst -config ~/.config/dunst/dunstrc &

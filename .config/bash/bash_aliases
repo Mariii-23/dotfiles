@@ -2,6 +2,8 @@
 ### ALIAS
 ######################
 
+alias sudo='sudo '
+
 alias rm="rm -v"
 alias cp="cp -v"
 

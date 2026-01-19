@@ -120,6 +120,9 @@ export PATH="$GEM_HOME/bin:$PATH"
 
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/mari/.dotnet/tools"
+#export DOTNET_ROOT=$HOME/.dotnet
+#export PATH=$HOME/.dotnet:$HOME/.dotnet/tools:$PATH
+
 
 alias mesa_pc="xinput map-to-output \"HUION Huion Tablet Pen Pen (0)\" eDP-1"
 alias mesa_monitor="xinput map-to-output \"HUION Huion Tablet Pen Pen (0)\" HDMI-1"

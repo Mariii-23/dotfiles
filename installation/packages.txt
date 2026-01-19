@@ -27,7 +27,8 @@ networkmanager
 nmap
 pacmixer
 pavucontrol
-picom-gitplayerctl
+picom-git
+playerctl
 polybar
 pulseaudio
 rangerrofi

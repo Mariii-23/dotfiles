@@ -1,6 +1,10 @@
 dest_dir=~/.config
 .config/alacritty
 .config/bash
+.config/sxhkd
+.config/zsh
+.config/herbstluftwm
+
 .config/bin
 .config/dunst
 .config/i3
@@ -10,12 +14,9 @@ dest_dir=~/.config
 .config/polybar
 .config/ranger
 .config/rofi
-.config/sxhkd
 .config/starship.toml
 .config/terminator
 .config/zathura
-.config/zsh
-.config/herbstluftwm
 
 dest_dir=~
 .config/.xinitrc
