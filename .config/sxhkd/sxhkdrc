@@ -185,6 +185,10 @@ control + mod + l
 XF86MonBrightness{Up,Down}
         brightnessctl set 5%{+,-}
 
+super + XF86MonBrightness{Up,Down}
+      bash ~/dotfiles/scripts/alacritty-opacity.sh {add, sub}
+
+
 ######### MEDIA ###########
 
 XF86Audio{Raise,Lower}Volume

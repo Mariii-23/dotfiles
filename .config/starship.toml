@@ -5,12 +5,12 @@ add_newline = true
 # [character]                            # The name of the module we are configuring is "character"
 # success_symbol = "[ ](bold blue)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 # [character]
-# success_symbol = "[ ](blue)" 
+# success_symbol = "[ ](blue)"
 # # success_symbol = "[➜](bold green) "
 # error_symbol = "[✗](bold red) "
 
 format = """
-$git_branch$git_commit$git_state$git_status
+$hostname $git_branch$git_commit$git_state$git_status
 [§ ](blue)$directory$cmd_duration$battery[§](blue) """
 # [<](blue)$directory$cmd_duration$battery[/>](blue) """
 # $directory$cmd_duration$battery[ ](blue) """
@@ -26,6 +26,11 @@ $git_branch$git_commit$git_state$git_status
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = false
+
+[hostname]
+ssh_only = true
+format = "[@$hostname](bold cyan)"
+
 
 # GIT
 

@@ -119,9 +119,19 @@ export GEM_HOME="$HOME/.local/share/gem/ruby/3.4.0"
 export PATH="$GEM_HOME/bin:$PATH"
 
 # Add .NET Core SDK tools
-export PATH="$PATH:/home/mari/.dotnet/tools"
+# versao 9
+# export PATH="$PATH:/home/mari/.dotnet/tools"
+
+# versao 8
 #export DOTNET_ROOT=$HOME/.dotnet
 #export PATH=$HOME/.dotnet:$HOME/.dotnet/tools:$PATH
+
+# versao 10
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$HOME/dotnet:$PATH
+
+
+
 
 
 alias mesa_pc="xinput map-to-output \"HUION Huion Tablet Pen Pen (0)\" eDP-1"
