@@ -1,3 +1,10 @@
+export XDG_CURRENT_DESKTOP=X-Generic
+export XDG_SESSION_TYPE=x11
+
+systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
+
 xrdb ~/.Xresources
 setxkbmap -layout pt
 
@@ -8,7 +15,7 @@ xrandr --newmode "1366x768-1" 75.61  1366 1406 1438 1574  768 771 777 800 -h
 xrandr --addmode HDMI-1 "1366x768-1"
 
 # Touchpad
-xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Click Method Enabled'0 1
+xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Click Method Enabled' 0 1
 xinput set-prop 'ELAN1300:00 04F3:30BE Touchpad' 'libinput Tapping Enabled' 1
 
 sxhkd &>/tmp/log_sxhkd.txt & disown
