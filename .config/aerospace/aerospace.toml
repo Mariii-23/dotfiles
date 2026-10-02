@@ -1,0 +1,40 @@
+###############################################################################
+# AeroSpace - Herbst style config
+###############################################################################
+
+config-version = 2
+start-at-login = true
+
+###############################################################################
+# Layout
+###############################################################################
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# semelhante ao smart_frame_surroundings do herbst
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+###############################################################################
+# JankyBorders - Borders
+###############################################################################
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0x2aa198 inactive_color=0xff494d64 width=5.0'
+]
+
+###############################################################################
+# Gaps
+###############################################################################
+
+[gaps]
+
+inner.horizontal = 8
+inner.vertical = 8
+
+outer.left = 8
+outer.right = 8
+outer.top = 6
+outer.bottom = 6
+

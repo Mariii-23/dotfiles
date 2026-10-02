@@ -12,11 +12,11 @@ alias cp="cp -v"
 
 #if hash exa &>/dev/null
 #then
-alias ls='exa'
-alias l='exa -lsnew'
-alias ll='exa -lsnew -a'
+alias ls='eza'
+alias l='eza -lsnew'
+alias ll='eza -lsnew -a'
 alias lt='ls -t'
-alias tree='exa -T'
+alias tree='eza -T'
 #else
 alias l.='ls -d .* --color=auto'
 #    alias ll='ls -l --color=auto'
@@ -109,3 +109,7 @@ alias ...='cd ../..'
 
 # ativa o docker
 alias start_mysql='docker run --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql'
+
+
+# PiKaraoke
+alias karaoke="ssh -L 5000:localhost:5000 flopy"

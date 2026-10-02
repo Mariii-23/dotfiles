@@ -37,11 +37,12 @@ WINIT_X11_SCALE_FACTOR = "1.5"
 size = 14
 
 [font.bold]
-family = "Anonymous Pro Minus"
+family = "Anonymous Pro"
 style = "Bold"
 
 [font.bold_italic]
-family = "SauceCodePro Nerd Font"
+family = "Anonymous Pro"
+# family = "SauceCodePro Nerd Font"
 style = "Bold Italic"
 
 [font.glyph_offset]
@@ -53,7 +54,7 @@ family = "Hack"
 style = "Italic"
 
 [font.normal]
-family = "Anonymous Pro Minus"
+family = "Anonymous Pro"
 style = "Bold"
 
 [font.offset]

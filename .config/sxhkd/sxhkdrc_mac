@@ -1,0 +1,164 @@
+###############################################################################
+# SKHD - AeroSpace
+# Inspired by HerbstluftWM
+###############################################################################
+
+#lalt - q : osascript -e 'tell application "System Events" to keystroke "q" using command down'
+
+#lalt - d : osascript -e 'tell application "System Events" to keystroke space using command down'
+
+###############################################################################
+# Reload
+###############################################################################
+
+shift + lalt - r : aerospace reload-config; brew services restart borders
+
+
+###############################################################################
+# Focus Windows
+###############################################################################
+
+lalt - h : aerospace focus left
+lalt - j : aerospace focus down
+lalt - k : aerospace focus up
+lalt - l : aerospace focus right
+
+###############################################################################
+# Move Windows
+###############################################################################
+
+shift + lalt - h : aerospace move left
+shift + lalt - j : aerospace move down
+shift + lalt - k : aerospace move up
+shift + lalt - l : aerospace move right
+
+###############################################################################
+# Move Workspace to Monitor
+###############################################################################
+
+cmd + ctrl  - h : aerospace move-workspace-to-monitor left
+cmd + ctrl  - j : aerospace move-workspace-to-monitor down
+cmd + ctrl  - k : aerospace move-workspace-to-monitor up
+cmd + ctrl  - l : aerospace move-workspace-to-monitor right
+
+###############################################################################
+# Smart Resize
+###############################################################################
+
+ctrl + lalt - h : aerospace resize smart -50
+ctrl + lalt - l : aerospace resize smart +50
+
+ctrl + lalt - k : aerospace resize smart-opposite -50
+ctrl + lalt - j : aerospace resize smart-opposite +50
+
+###############################################################################
+# Workspaces / Spaces
+###############################################################################
+
+lalt - 1 : aerospace workspace 1
+lalt - 2 : aerospace workspace 2
+lalt - 3 : aerospace workspace 3
+lalt - 4 : aerospace workspace 4
+lalt - 5 : aerospace workspace 5
+lalt - 6 : aerospace workspace 6
+lalt - 7 : aerospace workspace 7
+lalt - 8 : aerospace workspace 8
+lalt - 9 : aerospace workspace 9
+lalt - 0 : aerospace workspace 10
+
+
+# Move window to workspace
+
+shift + lalt - 1 : aerospace move-node-to-workspace 1
+shift + lalt - 2 : aerospace move-node-to-workspace 2
+shift + lalt - 3 : aerospace move-node-to-workspace 3
+shift + lalt - 4 : aerospace move-node-to-workspace 4
+shift + lalt - 5 : aerospace move-node-to-workspace 5
+shift + lalt - 6 : aerospace move-node-to-workspace 6
+shift + lalt - 7 : aerospace move-node-to-workspace 7
+shift + lalt - 8 : aerospace move-node-to-workspace 8
+shift + lalt - 9 : aerospace move-node-to-workspace 9
+shift + lalt - 0 : aerospace move-node-to-workspace 10
+
+
+###############################################################################
+# Window
+###############################################################################
+
+# Fullscreen
+lalt - f : aerospace fullscreen
+
+
+# Float
+shift + lalt - space : aerospace layout floating tiling
+
+
+###############################################################################
+# Applications
+###############################################################################
+
+# Terminal
+lalt - return : open -na Alacritty --args --config-file ~/.config/alacritty/alacrittyTmux.toml
+shift + lalt - return : open -na Alacritty --args --config-file ~/.config/alacritty/alacritty.toml
+
+ralt - return : open -na Terminal
+
+
+# Firefox
+# lalt - i : osascript -e 'tell application "Firefox" to activate' -e 'tell application "System Events" to keystroke "n" using command down'
+lalt - i : open -na Firefox
+
+
+# Youtube
+lalt - m : open -na Firefox https://www.youtube.com
+
+# Safari
+lalt + shift - i : open -na Safari
+
+###############################################################################
+# Layout
+###############################################################################
+
+lalt - w : aerospace layout tiles vertical
+lalt - e : aerospace layout tiles horizontal
+lalt - a : aerospace layout accordion
+
+# Cycle layouts (vamos adaptar depois)
+lalt - space : aerospace layout tiles
+
+###############################################################################
+# Split
+###############################################################################
+
+lalt - c : aerospace split vertical
+lalt - v : aerospace split horizontal
+
+## balance
+lalt + shift - b : aerospace balance-sizes
+
+## flatten
+lalt + shift - f : aerospace flatten-workspace-tree
+
+## join
+lalt + shift - f : aerospace flatten-workspace-tree
+
+###############################################################################
+# Monitor
+###############################################################################
+
+# próximo monitor
+lalt - tab : aerospace focus-monitor next
+
+# monitor anterior
+lalt + shift - tab : aerospace focus-monitor prev
+
+
+###############################################################################
+# Alacratty
+###############################################################################
+
+# ctrl - volume_up : bash ~/dotfiles/scripts/alacritty-opacity.sh add
+# ctrl - volume_down : bash ~/dotfiles/scripts/alacritty-opacity.sh sub
+#
+alt - sound_up : bash ~/dotfiles/scripts/alacritty-opacity.sh add
+alt - sound_down : bash ~/dotfiles/scripts/alacritty-opacity.sh sub

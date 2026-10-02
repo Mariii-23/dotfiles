@@ -39,7 +39,11 @@ esac
 # Apply to all config files
 for CONFIG in "${CONFIGS[@]}"; do
   if [ -f "$CONFIG" ]; then
-    sed -i "s/^opacity = .*/opacity = $new/" "$CONFIG"
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        sed -i '' "s/^opacity = .*/opacity = $new/" "$CONFIG"
+    else
+        sed -i "s/^opacity = .*/opacity = $new/" "$CONFIG"
+    fi
     echo "Updated $CONFIG"
   else
     echo "File not found: $CONFIG"

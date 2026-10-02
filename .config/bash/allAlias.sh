@@ -4,3 +4,4 @@ source ~/.config/bash/abbreviate.sh
 source ~/.config/bash/path_config.sh
 source ~/.config/bash/git.bash
 source ~/.config/bash/sound.bash
+source ~/.ssh/alias_companie.bash

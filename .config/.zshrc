@@ -102,8 +102,33 @@ lfcd () {
 bindkey -s '^o' 'lfcd\n'
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+# Plugins
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS (Homebrew)
+    if command -v brew &>/dev/null; then
+        source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+        source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+        FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+    fi
+
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux (Arch)
+    if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+        source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    fi
+
+    if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    fi
+
+fi
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source  /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # https://github.com/nvbn/thefuck
 
 
